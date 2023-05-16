@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -8,6 +9,7 @@
   <!-- General CSS Files -->
   <link rel="stylesheet" href="/modules/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/modules/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css">
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="/modules/bootstrap-social/bootstrap-social.css">
@@ -15,16 +17,17 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/components.css">
-<!-- Start GA -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Start GA -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-94034622-3');
-</script>
-<!-- /END GA --></head>
+    gtag('config', 'UA-94034622-3');
+  </script>
+  <!-- /END GA -->
+</head>
 
 <body>
   <div id="app">
@@ -37,7 +40,9 @@
             </div>
 
             <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4></div>
+              <div class="card-header">
+                <h4>Login</h4>
+              </div>
 
               <div class="card-body">
                 <form method="POST" action="#" class="needs-validation" novalidate="">
@@ -51,7 +56,7 @@
 
                   <div class="form-group">
                     <div class="d-block">
-                    	<label for="password" class="control-label">Password</label>
+                      <label for="password" class="control-label">Password</label>
                       <div class="float-right">
                         <a href="auth-forgot-password.html" class="text-small">
                           Forgot Password?
@@ -89,7 +94,7 @@
                   <div class="col-6">
                     <a class="btn btn-block btn-social btn-twitter">
                       <span class="fab fa-twitter"></span> Twitter
-                    </a>                                
+                    </a>
                   </div>
                 </div>
 
@@ -106,35 +111,35 @@
       </div>
     </section>
   </div>
-  <!-- Example EJS file -->
-<% if (flash.success && flash.success.length > 0) { %>
-  <div class="alert alert-success">
-    <%= flash.success[0] %>
-  </div>
-<% } %>
+        <% if (flash.success && flash.success.length > 0) { %>
+          <script src="https://cdn.jsdelivr.net/npm/noty@3.1.3/lib/noty.min.js"></script>
+          <script>
+            new Noty({
+              text: '<%= flash.success[0] %>',
+              type: 'success',
+              theme: 'sunset',
+              timeout: 5000,
+              layout: 'topRight'
+            }).show();
+          </script>
+          <% } %>
+          
+          <!-- General JS Scripts -->
+          <script src="/modules/jquery.min.js"></script>
+          <script src="/modules/popper.js"></script>
+          <script src="/modules/tooltip.js"></script>
+          <script src="/modules/bootstrap/js/bootstrap.min.js"></script>
+          <script src="/modules/nicescroll/jquery.nicescroll.min.js"></script>
+          <script src="/modules/moment.min.js"></script>
+          <script src="/js/stisla.js"></script>
 
-<% if (flash.error && flash.error.length > 0) { %>
-  <div class="alert alert-danger">
-    <%= flash.error[0] %>
-  </div>
-<% } %>
+          <!-- JS Libraies -->
 
+          <!-- Page Specific JS File -->
 
-  <!-- General JS Scripts -->
-  <script src="/modules/jquery.min.js"></script>
-  <script src="/modules/popper.js"></script>
-  <script src="/modules/tooltip.js"></script>
-  <script src="/modules/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/modules/nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="/modules/moment.min.js"></script>
-  <script src="/js/stisla.js"></script>
-  
-  <!-- JS Libraies -->
-
-  <!-- Page Specific JS File -->
-  
-  <!-- Template JS File -->
-  <script src="/js/scripts.js"></script>
-  <script src="/js/custom.js"></script>
+          <!-- Template JS File -->
+          <script src="/js/scripts.js"></script>
+          <script src="/js/custom.js"></script>
 </body>
+
 </html>
