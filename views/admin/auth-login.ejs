@@ -106,6 +106,19 @@
       </div>
     </section>
   </div>
+  <!-- Example EJS file -->
+<% if (flash.success && flash.success.length > 0) { %>
+  <div class="alert alert-success">
+    <%= flash.success[0] %>
+  </div>
+<% } %>
+
+<% if (flash.error && flash.error.length > 0) { %>
+  <div class="alert alert-danger">
+    <%= flash.error[0] %>
+  </div>
+<% } %>
+
 
   <!-- General JS Scripts -->
   <script src="/modules/jquery.min.js"></script>

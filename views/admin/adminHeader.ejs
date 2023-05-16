@@ -30,6 +30,19 @@
 <!-- /END GA --></head>
 
 <body>
+    <!-- Example EJS file -->
+<% if (flash.success && flash.success.length > 0) { %>
+  <div class="alert alert-success">
+    <%= flash.success[0] %>
+  </div>
+<% } %>
+
+<% if (flash.error && flash.error.length > 0) { %>
+  <div class="alert alert-danger">
+    <%= flash.error[0] %>
+  </div>
+<% } %>
+
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       <div class="navbar-bg"></div>
